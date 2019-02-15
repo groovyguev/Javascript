@@ -46,7 +46,7 @@ const queRenderPage = num => {
 };
 // show Prev page
 const showPrevPage = () => {
-  if (PageNume <= 1) {
+  if (pageNum <= 1) {
     return;
   }
   pageNum--;
