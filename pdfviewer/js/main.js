@@ -62,11 +62,20 @@ const showNextPage = () => {
   queRenderPage(pageNum);
 };
 // Get the ducument
-pdfjsLib.getDocument(url).promise.then(pdfDoc_ => {
-  pdfDoc = pdfDoc_;
-  document.querySelector("#page-count").textContent = pdfDoc.numPages;
-  renderPage(pageNum);
-});
+pdfjsLib
+  .getDocument(url)
+  .promise.then(pdfDoc_ => {
+    pdfDoc = pdfDoc_;
+    document.querySelector("#page-count").textContent = pdfDoc.numPages;
+    renderPage(pageNum);
+  })
+  .catch(err => {
+    // Display Error
+    const div = document.createElement("div");
+    div.className = "error";
+    div.appendChild(document.createTextNode(err.message));
+    document.querySelector("body").insertBefore(div, canvas);
+  });
 
 // button events
 document.querySelector("#prev-page").addEventListener("click", showPrevPage);

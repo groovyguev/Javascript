@@ -27,3 +27,14 @@
 .btn:hover {
   opacity: 1;
 }
+.error {
+  margin: 50px;
+  text-align: center;
+  background: tomato;
+  color: white;
+  padding: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  box-shadow: 3px 3px 6px 5px rgba(0, 0, 0, 0.2);
+}
